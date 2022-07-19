@@ -1,0 +1,24 @@
+pipelines:
+  default:
+    - step:
+        name: Push repo to server
+        script:
+          - pipe: atlassian/ftp-deploy:0.3.6
+            variables:
+              USER: $SERVER_USER
+              PASSWORD: $SERVER_PASSWORD
+              SERVER: $SERVER_IP
+              REMOTE_PATH: /home/bb-user/code
+
+    - step:
+        name: Start services & deploy scrapy spiders
+        script:
+          - pipe: atlassian/ssh-run:0.3.1
+            variables:
+              SSH_USER: $SERVER_SSH_USER
+              SERVER: $SERVER_IP
+              MODE: 'command'
+              COMMAND: >
+                sudo chmod -R 777 /home/bb-user/code/ &&
+                cd /home/bb-user/code/services &&
+                /home/bb-user/code/services/install.sh $HTTP_USER $HTTP_PASSWORD
