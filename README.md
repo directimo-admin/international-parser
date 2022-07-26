@@ -51,11 +51,8 @@ There are few files with different output, they must be ran in the order below
 
 To get the data from websites and save it to Mongo, run (in run project): 
 
-```python3 startScrapyWorkers.py```
+```python3 startScrapyWorkers.py imobiliare```
 
-To process Mongo data to SQL, run:
-
-```python3 processDataIntoDB.py```
 ## License
 GNU General Public License v3.0 or later
 
