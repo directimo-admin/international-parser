@@ -43,7 +43,7 @@ In order to deploy you have to run (inside project root/services folder):
 ``` docker-compose  --env-file ../.env.local up -d```
 
 Now you need to deploy the spiders:
-```scrapyd-deploy```
+```scrapyd-deploy``` inside root 
 
 ## Run
 
