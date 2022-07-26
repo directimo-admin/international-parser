@@ -38,9 +38,9 @@ Open condoparser/settings.py and replace ZYTE_SMARTPROXY_APIKEY with your Zyte k
 
 ## Deployment
 
-In order to deploy you have to run (inside project root folder):
+In order to deploy you have to run (inside project root/services folder):
 
-``` docker-compose  --env-file .env.local up -d```
+``` docker-compose  --env-file ../.env.local up -d```
 
 Now you need to deploy the spiders:
 ```scrapyd-deploy```
